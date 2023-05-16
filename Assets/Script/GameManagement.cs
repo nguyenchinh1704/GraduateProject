@@ -30,9 +30,32 @@ public class GameManagement : MonoBehaviour
     public Text sumCoin;
     public GameObject btnPause, titleInGame;
     public GameObject boughtEffect, textBuy, textUse;
+    public Image effectMenuStart;
     private void OnEnable()
     {
         instance = this;
+    }
+    public void ChangeColor()
+    {
+        StartCoroutine(AutoChangeColorRed());
+        StartCoroutine(AutoChangeColorYellow());
+        StartCoroutine(AutoChangeColorGreen());
+    }
+    IEnumerator AutoChangeColorRed()
+    {
+        yield return new WaitForSeconds(1f);
+        effectMenuStart.color = Color.red;
+        
+    }
+    IEnumerator AutoChangeColorYellow()
+    {
+        yield return new WaitForSeconds(3f);
+        effectMenuStart.color = Color.yellow;
+    }
+    IEnumerator AutoChangeColorGreen()
+    {
+        yield return new WaitForSeconds(5f);
+        effectMenuStart.color = Color.green;
     }
     IEnumerator UpdateTimer() // Coroutine clockCutdown
     {
@@ -72,9 +95,9 @@ public class GameManagement : MonoBehaviour
     public void ButtonStart()
     {
         menuStart.show();
-        CharacterInfor.instance.CharacterOn();
         StartCoroutine(PrepareStart());
         StartCoroutine(UpdateTimer());
+        CharacterInfor.instance.CharacterOn();
     }
     IEnumerator PrepareStart()
     {
@@ -148,13 +171,14 @@ public class GameManagement : MonoBehaviour
     {
         coin = 0;
         CheckOnCharater();
+        ChangeColor();
     }
 
     public void CheckCoinInGame()
     {
         int currentCoin;
         currentCoin = dataCoin.coin;
-        sumCoin.text = currentCoin.ToString();
+        sumCoin.text = currentCoin.ToString();      
     }
     // Update is called once per frame
     void Update()

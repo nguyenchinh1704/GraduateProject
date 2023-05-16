@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
     Vector3 startingDistance;
+    public SOCoin data;
     internal static object current;
+    public static CameraFollow instance;
+
+    private void OnEnable()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        target = PlayerController.instance.transform;
+        /*target = PlayerController.instance.transform;*/
         startingDistance = transform.position - target.position;
     }
 
@@ -22,6 +29,6 @@ public class CameraFollow : MonoBehaviour
     }
     void FollowCharacter()
     {
-        transform.position = new Vector3(target.position.x + startingDistance.x, startingDistance.y, target.position.z + startingDistance.z);
+        transform.position = new Vector3(target.position.x + startingDistance.x, transform.position.y, target.position.z - 3);
     }
 }

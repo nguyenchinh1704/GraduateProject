@@ -46,7 +46,7 @@ public class PathManagement : MonoBehaviour
     
     void Start()
     {
-        finishLine.transform.position = new Vector3(finishLine.transform.position.x, finishLine.transform.position.y, finishLine.transform.position.z + lengthPath);
+        finishLine.transform.position = new Vector3(finishLine.transform.position.x, finishLine.transform.position.y, finishLine.transform.position.z + lengthPath - 5);
         GenCoin(numCoinInPath1, startPositionCoinPath1, path1, coin1);
         GenCoin(numCoinInPath2, startPositionCoinPath2, path2, coin2);
         GenCoin(numCoinInPath3, startPositionCoinPath3, path3, coin3);

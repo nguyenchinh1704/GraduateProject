@@ -9,6 +9,9 @@ TagManager:
   - Coin
   - Die
   - Die1
+  - CenterPath
+  - RightPath
+  - LeftPath
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ public class CharacterInfor : MonoBehaviour
         {
             if (idCharacter == data.charater[i].id)
             {
-                if (data.charater[i].price < data.coin)
+                if (data.charater[i].price <= data.coin)
                 {
                     btnBuy.SetActive(false);
                     btnUse.SetActive(true);
@@ -81,7 +81,7 @@ public class CharacterInfor : MonoBehaviour
             {
                 if (data.charater[i].useCharacter == 1)
                 {
-                    character.SetActive(true);
+                    character.SetActive(true);                   
                 }
                 else
                 {

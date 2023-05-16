@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebe49afc9f06164085fe5e1d3712a42, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  coin: 5
+  coin: 0
   charater:
   - id: 0
     name: AMY
